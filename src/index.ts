@@ -1,1 +1,1 @@
-console.log('its work')
+console.log('its works')

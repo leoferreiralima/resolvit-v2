@@ -11,8 +11,9 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module",
     "project": "./tsconfig.json"
   },
   "plugins": [
