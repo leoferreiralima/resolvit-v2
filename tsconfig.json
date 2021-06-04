@@ -6,7 +6,6 @@
       "esnext"
     ],
     "outDir": "dist",
-    "strict": true,
     "baseUrl": ".",
     "rootDirs": [
       "src",

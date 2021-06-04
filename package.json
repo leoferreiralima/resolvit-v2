@@ -8,9 +8,12 @@
   "private": false,
   "scripts": {
     "prebuild": "rimraf ./dist",
+    "build:docker:dev": "docker build -t leoferreiralima/resolvit -f ./docker/dev/Dockerfile .",
     "build": "tsc",
     "prepare": "husky install",
-    "dev": "NODE_ENV=development ts-node-dev -r ./module-alias.js --inspect --respawn --transpile-only src/index.ts",
+    "start": "node dist/server.js",
+    "dev": "NODE_ENV=development ts-node-dev -r ./module-alias.js --inspect --respawn --transpile-only src/server.ts",
+    "dev:docker": "docker-compose up",
     "test": "jest",
     "test:staged": "npm test -- --findRelatedTests",
     "test:watch": "npm test -- --watch",
@@ -23,6 +26,8 @@
     "@commitlint/config-conventional": "^12.1.4",
     "@types/jest": "^26.0.23",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "babel-eslint": "^10.1.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.12.1",
     "eslint-config-standard": "^16.0.3",
@@ -40,6 +45,11 @@
     "typescript": "^4.3.2"
   },
   "dependencies": {
-    "module-alias": "^2.2.2"
+    "apollo-server": "^2.25.0",
+    "class-validator": "^0.13.1",
+    "graphql": "^15.5.0",
+    "module-alias": "^2.2.2",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1"
   }
 }
