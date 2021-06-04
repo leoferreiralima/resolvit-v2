@@ -1,9 +1,11 @@
 node_modules
 
-husky
+.husky
 
 coverage
 
-dist
-
 __tests__
+
+docker
+
+.github

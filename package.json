@@ -9,9 +9,10 @@
   "scripts": {
     "prebuild": "rimraf ./dist",
     "build:docker:dev": "docker build -t leoferreiralima/resolvit -f ./docker/dev/Dockerfile .",
+    "build:docker:prod": "docker build -t leoferreiralima/resolvit -f ./docker/prod/Dockerfile .",
     "build": "tsc",
     "prepare": "husky install",
-    "start": "node dist/server.js",
+    "start": "node -r ./module-alias.js dist/server.js",
     "dev": "NODE_ENV=development ts-node-dev -r ./module-alias.js --inspect --respawn --transpile-only src/server.ts",
     "dev:docker": "docker-compose up",
     "test": "jest",
