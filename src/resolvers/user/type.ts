@@ -1,7 +1,7 @@
 import { Field, ID, ObjectType } from 'type-graphql'
 
 @ObjectType()
-class User {
+export class User {
   @Field(() => ID)
   id: string;
 
@@ -17,5 +17,3 @@ class User {
   @Field(type => [String])
   ingredients: string[];
 }
-
-export { User }
